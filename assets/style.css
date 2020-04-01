@@ -1,0 +1,44 @@
+.toolbar{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+}
+.header-txt{
+    justify-self: left !important;
+}
+.basket{
+ justify-self: right !important;
+}
+.main-table {
+    margin-top: 50px;
+}
+
+
+.add-inputs{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.input{
+    margin-right: 20px !important;
+}
+.basket-list {
+    width: 35%;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    box-sizing: border-box;
+    z-index: 3;
+    padding-top: 10px;
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .basket-list{
+        right: 10%;
+    }
+}
