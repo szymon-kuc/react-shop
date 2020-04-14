@@ -12,7 +12,10 @@
     margin-top: 50px;
 }
 
-
+img {
+    width: 100px;
+    height: 100px;
+}
 .add-inputs{
     margin-top: 30px;
     display: flex;
@@ -20,6 +23,9 @@
 }
 .input{
     margin-right: 20px !important;
+}
+.add {
+    margin-bottom: 80px;
 }
 .basket-list {
     width: 35%;
@@ -41,4 +47,30 @@
     .basket-list{
         right: 10%;
     }
+}
+.main {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+.ad{
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    height: 400px;
+    margin: 10px;
+    background-image: url('ad.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer{
+    position: fixed;
+    bottom: 10px;
+    width: 80%;
+    align-items: center;
+}
+.fotterBar {
+    justify-content: center !important;
+    text-align: center !important;
+}
+.copy {
+    justify-self: center !important;
 }

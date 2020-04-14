@@ -65,6 +65,7 @@ export default function SimpleTable() {
               <TableCell align="justify">Cena</TableCell>
               <TableCell align="justify">Ilość</TableCell>
               <TableCell align="justify">Producent</TableCell>
+              <TableCell align="justify">Zdjęcie</TableCell>
               <TableCell align="justify">Edytuj</TableCell>
               <TableCell align="justify">Usuń</TableCell>
               <TableCell align="justify">Kup</TableCell>
@@ -82,6 +83,7 @@ export default function SimpleTable() {
                 <TableCell align="justify">{row.price}</TableCell>
                 <TableCell align="justify">{row.amount}</TableCell>
                 <TableCell align="justify">{row.producer}</TableCell>
+                <TableCell align="justify"><img src={row.img}/></TableCell>
                 <TableCell align="justify"><IconButton color="inherit" onClick={() => editItemAction({...row, active: 0})}><EditIcon /></IconButton></TableCell></>
                 }
                 <TableCell align="justify"><IconButton color="inherit" onClick={() => deleteElement(row.id)}> <DeleteIcon /></IconButton></TableCell>

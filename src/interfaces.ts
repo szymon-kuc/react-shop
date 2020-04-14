@@ -4,5 +4,6 @@ export interface I_Shop {
     price: number,
     amount: number,
     producer: string,
-    active: number
+    active: number,
+    img: string
 }

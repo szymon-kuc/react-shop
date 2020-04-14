@@ -23,7 +23,7 @@ export const EditItem: React.FC<I_EditItem_Props> = ({item}) => {
 
     const edit = () => {
         if(!isNaN(price) && !isNaN(amount)){
-            const newItem = {id: item.id, name:name, price: price, amount: amount, producer: producer, active:1};
+            const newItem = {id: item.id, name:name, price: price, amount: amount, producer: producer, active:1, img:item.img};
             const newData = JSON.parse(localStorage.getItem('data'));
             const editJSON = newData.map((el: any) => {
                     if(el.id==newItem.id){
