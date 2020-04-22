@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -16,8 +17,20 @@ export const NavBar: React.FC = () => {
 	<div>
 		<AppBar position="static">
         <Toolbar className="toolbar">
-          <Typography variant="h6" align="center" className="header-txt">
-            SHOP
+          <Typography variant="h5" align="center" className="header-txt">
+          <NavLink to={'/'} >
+                OnlineShop
+            </NavLink>
+          </Typography>
+          <Typography variant="h6">
+            <NavLink to={'/shop'} >
+                Sklep
+            </NavLink>
+          </Typography>
+          <Typography variant="h6">
+            <NavLink to={'/kontakt'} >
+                Kontakt
+            </NavLink>
           </Typography>
           <IconButton edge="end" color="inherit" className="basket" onClick={() => basket === true ? setBasket(false) : setBasket(true)}>
             <Badge badgeContent={basketList.length} color="secondary"><ShoppingBasketIcon /></Badge>
