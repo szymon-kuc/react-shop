@@ -3,8 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import { Aside } from './Aside';
 import Slider from '@farbenmeer/react-spring-slider';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent'
 
 export const Home: React.FC = () => {
 	return (
