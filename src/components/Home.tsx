@@ -1,64 +1,62 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import { Aside } from './Aside';
-import Slider from '@farbenmeer/react-spring-slider';
-import Card from '@material-ui/core/Card';
+import { NewOffer } from './NewOffer'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import SearchIcon from '@material-ui/icons/Search';
+import DriveEtaIcon from '@material-ui/icons/DriveEta';
+import TvIcon from '@material-ui/icons/Tv';
+import FaceIcon from '@material-ui/icons/Face';
+import HomeIcon from '@material-ui/icons/Home';
+import PetsIcon from '@material-ui/icons/Pets';
+import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 
 export const Home: React.FC = () => {
 	return (
 		<>
-		<div className="slider">
-		<Slider hasBullets bulletStyle={{backgroundColor: '#000'}}>
-			<div className="ad1">
-			<Typography variant="h4">
-					Kupuj aż o 1% taniej z kodem rabatowym "SUPER" (*tylko wybrane artykuły)
-				</Typography>
-			</div>
-			<div className="ad1 ad2">
-			<Typography variant="h4">
-					Jesteśmy najszybciej rozwijającą się firmą na rynku!
-				</Typography>
-			</div>
-			<div>child 3</div>
-		</Slider>  
-	</div>
-			<section className="main">
-				<article>
-				<Card>
-						<Typography variant="h4" className="about">
-							O Nas
-						</Typography>
-						<Typography variant="h6" className="about-txt">
-							Na naszej witrynie możesz być zarówno sprzedającm jak i kupującym. Wybieraj z setek ofert, sprzedawaj co tylko chcesz!
-						</Typography>
-				</Card>
-				
-					<Typography variant="h5" className="new-title">
-						Ostatnio dodane produkty:
-					</Typography>
-					<article className="new-products">
-						<div>
-							<Typography variant="h5">Tesla Roadster</Typography>
-							<img className="home-img" src="../../assets/tesla.jpg" alt=""/>
-						</div>
-						<div>
-							<Typography variant="h5">BMW i8</Typography>
-							<img className="home-img" src="../../assets/bmw.jpg" alt=""/>
-						</div>
-						<div>
-							<Typography variant="h5">Lamborghini</Typography>
-							<img className="home-img" src="../../assets/ciagnik.jpg" alt=""/>
-						</div>
-						<div>
-							<Typography variant="h5">Porshe 911</Typography>
-							<img className="home-img" src="../../assets/porshe.jpg" alt=""/>
-						</div>
-					</article>
+		<section className="navigation">
+			<div className="home-container">
+				<article className="search">
+					<div className="search-input">
+						<TextField id="standard-basic" className="input" label="Szukaj..." />
+					</div>
+					<Button variant="contained" className="button" endIcon={<SearchIcon />}>
+						Szukaj
+					</Button>
 				</article>
-				<aside>
-					<Aside />
-				</aside>
+				<div className="categories"> 
+					<div className="category">
+						<Avatar className="avatar"><DriveEtaIcon /></Avatar> &nbsp;&nbsp;&nbsp; Motoryzacja
+					</div>
+					<div className="category">
+						<Avatar className="avatar"><TvIcon /></Avatar> &nbsp;&nbsp;&nbsp; Elektronika
+					</div>
+					<div className="category">
+						<Avatar className="avatar"><FaceIcon /></Avatar> &nbsp;&nbsp;&nbsp; Moda
+					</div>
+					<div className="category">
+						<Avatar className="avatar"><HomeIcon /></Avatar> &nbsp;&nbsp;&nbsp; Dom
+					</div>
+					<div className="category">
+						<Avatar className="avatar"><PetsIcon /></Avatar> &nbsp;&nbsp;&nbsp; Zwierzęta
+					</div>
+					<div className="category">
+						<Avatar className="avatar"><SportsBasketballIcon /></Avatar> &nbsp;&nbsp;&nbsp; Sport
+					</div>
+				</div>
+			</div>
+		</section>
+		<section className="new-offers">
+			<h2>Ostatnio dodane ogłoszenia</h2>
+			<section className="new-offers-grid">
+				<NewOffer />
+				<NewOffer />
+				<NewOffer />
+				<NewOffer />
+				<NewOffer />
+				<NewOffer />
 			</section>
-			</>
+		</section>
+		</>
 	);
 }

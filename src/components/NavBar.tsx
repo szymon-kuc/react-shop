@@ -1,43 +1,36 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom'
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { useSelector } from 'react-redux';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AddIcon from '@material-ui/icons/Add';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import Badge from '@material-ui/core/Badge';
-import { useSelector } from 'react-redux';
+import IconButton from '@material-ui/core/IconButton';
 import { Basket } from './Basket';
+import Button from '@material-ui/core/Button'
 
 export const NavBar: React.FC = () => {
   const [basket, setBasket] = useState(false);
   const basketList = useSelector((state: any) => state.basket);
 
 	return (
-	<div>
-		<AppBar position="static">
-        <Toolbar className="toolbar">
-          <Typography variant="h5" align="center" className="header-txt">
-          <NavLink to={'/'} >
-                OnlineShop
-            </NavLink>
-          </Typography>
-          <Typography variant="h6">
-            <NavLink to={'/shop'} >
-                Sklep
-            </NavLink>
-          </Typography>
-          <Typography variant="h6">
-            <NavLink to={'/kontakt'} >
-                Kontakt
-            </NavLink>
-          </Typography>
+      <header className="navbar">
+        <div className="logo">E-SKLEP</div>
+        <div className="menu-items">
+          <div className="nav-item">
+            <Button variant="contained" className="button" startIcon={<AddIcon />}>
+              Dodaj Ofertę
+            </Button>
+          </div>
+          <div className="nav-item">
+            <AccountCircleIcon /> &nbsp; Twoje konto
+          </div>
+          <div className="nav-item">
           <IconButton edge="end" color="inherit" className="basket" onClick={() => basket === true ? setBasket(false) : setBasket(true)}>
-            <Badge badgeContent={basketList.length} color="secondary"><ShoppingBasketIcon /></Badge>
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      {basket === true && <Basket />}
-	</div>
+            <Badge badgeContent={basketList.length} color="secondary"><ShoppingBasketIcon /></Badge></IconButton>
+          </div> 
+        </div>
+        {basket === true && <Basket />}
+      </header>
+       
 	);
 }

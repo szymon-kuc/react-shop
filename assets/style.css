@@ -1,19 +1,166 @@
 body {
     margin: 0px;
+    font-family: 'Open Sans', sans-serif;
 }
 a {
     text-decoration: none;
     color: white
 }
-.toolbar{
-    display: grid !important;
-    grid-template-columns: 160px 70px 70px 1fr;
+.navbar{
+    height: 50px;
+    background-color: #708090;
+    color: #FFD300;
+    display: flex;
+    align-items: center;
+
 }
+.logo{
+    font-family: 'Bangers', cursive;
+    margin-left: 25px;
+    font-size: 2em;
+    letter-spacing: 3px;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.menu-items{
+    display: flex;
+    margin-left: auto;
+}
+.nav-item{
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.nav-item:hover{
+    cursor: pointer;
+}
+.button{
+    background-color: #FFD300 !important;
+}
+.home-container {
+    margin: 0 auto;
+    width: 60%;
+}
+.navigation {
+    background-color: #d4d8dd;
+    padding-bottom: 40px;
+}
+.MuiFormLabel-root {
+    color: #505050 !important;
+}
+.MuiInput-underline::after {
+    border-color: #708090 !important;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #FFD300;
+}
+.search-input{
+    margin-right: 50px;
+}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.avatar {
+    background-color: #708090 !important;
+}
+.category {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.category:hover {
+    cursor: pointer;
+    color: #FFD300;
+}
+.new-offers {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.new-offers h2 {
+    font-weight: 400;
+}
+.new-offers-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    text-align: center;
+}
+.new-offer{
+    background-color: #708090;
+    border-radius: 6px;
+}
+.new-offer:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
+.new-offer p:first-of-type{
+    margin-top: 5px;
+}
+.new-offer p {
+    padding: 5px;
+    margin: 0px;
+    background-color: #FFD300;
+}
+.new-offer-img {
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.new-offer-img img {
+    width: 100%;
+    height: 100%;
+}
+@media (min-width: 1200px){
+    /* .container {
+        width: 80%;
+        margin: 0 auto;
+    } */
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    margin-left: 40px;
+}
+ul li:hover {
+    cursor: pointer;
+    color: #FFD300;
+}
+.footer {
+    background-color: #d4d8dd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.footer-navigation {
+    width: 60%;
+    margin: 0 auto;
+    border-top: 2px solid #FFD300;
+    border-bottom: 2px solid #FFD300;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+}
+.copyRight {
+    text-align: center;
+}
+
 .header-txt{
     justify-self: left !important;
-}
-.basket{
- justify-self: right !important;
 }
 .main-table {
     margin-top: 50px;
@@ -37,7 +184,7 @@ img {
 .basket-list {
     width: 35%;
     position: absolute;
-    top: 80px;
+    top: 50px;
     right: 0px;
     border: 1px solid rgb(201, 201, 201);
     border-radius: 5px;
@@ -46,21 +193,7 @@ img {
     padding-top: 10px;
 }
 
-@media (min-width: 1200px){
-    .basket-list{
-        right: 10%;
-    }
-}
-.main {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    padding: 10px;
-}
-.slider{
-    height: 300px;
-    width: 80%;
-    margin: 0 auto;
-}
+
 .ad1{
     padding-top: 10px;
     height: 100%;
@@ -83,42 +216,4 @@ img {
     background-image: url('ad.png');
     background-position: center;
     background-repeat: no-repeat;
-}
-.footer{
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    align-items: center;
-}
-.fotterBar {
-    justify-content: center !important;
-    text-align: center !important;
-}
-.copy {
-    justify-self: center !important;
-}
-
-.about {
-    padding-bottom: 15px;
-    padding-top: 20px;
-    letter-spacing: 3px !important;
-}
-.about-txt {
-    padding-bottom: 20px;
-}
-
-.new-title{
-    padding-top: 20px;
-}
-.home-img {
-    width: 250px;
-    height: 150px;
-}
-
-.new-products {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 60px;
 }
