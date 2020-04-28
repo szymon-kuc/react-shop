@@ -268,27 +268,3 @@ img {
     padding-top: 10px;
     background-color: white;
 }
-
-.ad1{
-    padding-top: 10px;
-    height: 100%;
-    width: 100%;
-    background-image: url('promocja_baner.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    text-shadow: red 0.08em 0.08em 0.3em
-}
-.ad2{
-    background-image: url('konk.jpg');
-}
-.ad{
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
-    height: 400px;
-    margin: 10px;
-    background-image: url('ad.png');
-    background-position: center;
-    background-repeat: no-repeat;
-}

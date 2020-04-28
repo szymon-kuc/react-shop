@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { NewOffer } from './NewOffer';
+import Image from '../../assets/bmw.jpg'
 
 export const Product: React.FC = () => {
 	return (
@@ -23,7 +24,7 @@ export const Product: React.FC = () => {
         <section className="product">
             <article className="product-header">
                 <figure className="product-img">
-                    <img src="../../assets/bmw.jpg" alt=""/>
+                    <img src={Image} alt=""/>
                 </figure>
                 <h1 className="product-title" >BMW i8</h1>
                 <div className="product-price-buy">
