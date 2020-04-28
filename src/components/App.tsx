@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar } from './NavBar';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../assets/style.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
@@ -15,9 +15,11 @@ export const App: React.FC = () => {
 		<Router>
 		<NavBar />
 		<div className="container">
-				<Route path='/' render={() => <Home />} exact/>
-                <Route path='/shop' render={() => <Shop />} exact/>
-				<Route path='/produkt' render={() => <Product />} exact/>
+			<Switch>
+				<Route path='/' render={() => <Home />}/>
+                <Route path='/shop' render={() => <Shop />}/>
+				<Route path='/produkt' render={() => <Product />}/>
+			</Switch>
 		</div>
 		<Footer />
 		</Router>
