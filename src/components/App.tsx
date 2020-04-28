@@ -12,13 +12,13 @@ import { Product } from './Product';
 export const App: React.FC = () => {
 	return (
 	<Provider store={store}>
-		<Router basename="/react-shop">
+		<Router basename="react-shop">
 		<NavBar />
 		<div className="container">
 			<Switch>
-				<Route path='/' render={() => <Home />}/>
-                <Route path='/shop' render={() => <Shop />}/>
-				<Route path='/produkt' render={() => <Product />}/>
+				<Route path='/' exact component={() => <Home />}/>
+                <Route path='/shop' exact component={() => <Shop />}/>
+				<Route path='/produkt' exact component={() => <Product />}/>
 			</Switch>
 		</div>
 		<Footer />
