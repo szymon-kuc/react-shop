@@ -9,16 +9,16 @@ a {
 .navbar{
     height: 50px;
     background-color: #708090;
-    color: #FFD300;
     display: flex;
     align-items: center;
-
+    color: #FFD300;
 }
 .logo{
     font-family: 'Bangers', cursive;
     margin-left: 25px;
     font-size: 2em;
     letter-spacing: 3px;
+    color: #FFD300;
 }
 .logo:hover{
     cursor: pointer;
@@ -39,6 +39,9 @@ a {
 }
 .button{
     background-color: #FFD300 !important;
+}
+.buttonP{
+    background-color: #708090 !important;
 }
 .home-container {
     margin: 0 auto;
@@ -78,7 +81,7 @@ a {
     align-items: center;
     margin-top: 30px;
 }
-.category:hover {
+.category:hover{
     cursor: pointer;
     color: #FFD300;
 }
@@ -95,6 +98,9 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
     text-align: center;
+    background-color: white;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 .new-offer{
     background-color: #708090;
@@ -158,6 +164,76 @@ ul li:hover {
 .copyRight {
     text-align: center;
 }
+.product-buttons {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+}
+.product-buttons div:last-of-type{
+    justify-self: end;
+}
+.product {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: #d4d8dd;
+}
+.product-img {
+    margin: 0 auto;
+    width: 100%;
+}
+.product-img img{
+    width: 100%;
+    height: 100%;
+}
+.product-title {
+    font-size: 28px;
+    margin-top: 0px;
+    margin-left: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.product-price-buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #FFD300;
+    margin: 0px 30px;
+}
+.product-price{
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
+    margin-right: 20px;
+    padding: 5px;
+}
+.advert{
+    background-color: #708090;
+    margin: 0px 30px;
+    height: 180px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 180px;
+    font-size: 28px;
+}
+.description {
+    border-top: 2px solid #FFD300;
+    margin: 0px 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.similar-offers{
+    background-color: white;
+    margin: 0px;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
 
 .header-txt{
     justify-self: left !important;
@@ -165,7 +241,6 @@ ul li:hover {
 .main-table {
     margin-top: 50px;
 }
-
 img {
     width: 100px;
     height: 100px;
@@ -189,10 +264,10 @@ img {
     border: 1px solid rgb(201, 201, 201);
     border-radius: 5px;
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 3 !important;
     padding-top: 10px;
+    background-color: white;
 }
-
 
 .ad1{
     padding-top: 10px;

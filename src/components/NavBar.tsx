@@ -7,6 +7,7 @@ import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
 import { Basket } from './Basket';
 import Button from '@material-ui/core/Button'
+import { NavLink } from 'react-router-dom';
 
 export const NavBar: React.FC = () => {
   const [basket, setBasket] = useState(false);
@@ -14,12 +15,14 @@ export const NavBar: React.FC = () => {
 
 	return (
       <header className="navbar">
-        <div className="logo">E-SKLEP</div>
+        <NavLink to="/"><div className="logo">E-SKLEP</div></NavLink>
         <div className="menu-items">
           <div className="nav-item">
-            <Button variant="contained" className="button" startIcon={<AddIcon />}>
-              Dodaj Ofertę
-            </Button>
+            <NavLink to="/shop">
+              <Button variant="contained" className="button" startIcon={<AddIcon />}>
+                Dodaj Ofertę
+              </Button>
+            </NavLink>
           </div>
           <div className="nav-item">
             <AccountCircleIcon /> &nbsp; Twoje konto

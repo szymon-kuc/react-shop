@@ -1,12 +1,15 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 export const NewOffer: React.FC = () => {
 	return (
-        <div className="new-offer">
-            <figure className="new-offer-img">
-                <img src="../../assets/bmw.jpg" alt=""/>
-            </figure>
-            <p>Lorem ipsum dolor sit amet.</p>
-            <p className="new-offer-price">255zł</p>
-        </div>
+        <NavLink to="/produkt">
+            <div className="new-offer">
+                <figure className="new-offer-img">
+                    <img src="../../assets/bmw.jpg" alt=""/>
+                </figure>
+                <p>BMW i8</p>
+                <p className="new-offer-price">450 000 zł</p>
+            </div>
+        </NavLink>
 	);
 }

@@ -19,7 +19,7 @@ export const App: React.FC = () => {
                 <Route path='/shop' render={() => <Shop />} exact/>
 				<Route path='/produkt' render={() => <Product />} exact/>
 		</div>
-		{/* <Footer /> */}
+		<Footer />
 		</Router>
 	</Provider>
 	);
