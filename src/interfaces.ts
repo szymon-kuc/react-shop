@@ -7,3 +7,14 @@ export interface I_Shop {
     active: number,
     img: string
 }
+
+export interface Offer {
+    id: number,
+    date: string,
+    img: string,
+    name: string,
+    price: number,
+    description: string,
+    alienor: string,
+    status: string
+}

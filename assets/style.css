@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+    background-color: #d4d8dd;
 }
 a {
     text-decoration: none;
@@ -98,8 +99,7 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
     text-align: center;
-    background-color: white;
-    padding-top: 20px;
+    padding: 20px 30px;
     margin-bottom: 20px;
 }
 .new-offer{
@@ -113,6 +113,9 @@ a {
 .new-offer p:first-of-type{
     margin-top: 5px;
 }
+.new-offer p:first-of-type {
+    margin: 0px;
+}
 .new-offer p {
     padding: 5px;
     margin: 0px;
@@ -121,10 +124,10 @@ a {
 .new-offer-img {
     margin: 0px;
     padding: 0px;
-    width: 200px;
     height: 200px;
     margin: 0 auto;
-    margin-top: 10px;
+    background-position: center;
+    background-size: cover;
 }
 .new-offer-img img {
     width: 100%;
@@ -148,7 +151,7 @@ ul li:hover {
     color: #FFD300;
 }
 .footer {
-    background-color: #d4d8dd;
+    background-color: #708090;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -165,11 +168,15 @@ ul li:hover {
     text-align: center;
 }
 .product-buttons {
-    width: 60%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 40px;
+    padding: 5px;
+}
+.product-buttons div:nth-of-type(2){
+    justify-self: center;
+    align-self: center;
 }
 .product-buttons div:last-of-type{
     justify-self: end;
@@ -178,7 +185,7 @@ ul li:hover {
     width: 60%;
     margin: 0 auto;
     margin-top: 10px;
-    background-color: #d4d8dd;
+    background-color: white;
 }
 .product-img {
     margin: 0 auto;
@@ -190,7 +197,7 @@ ul li:hover {
 }
 .product-title {
     font-size: 28px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-left: 30px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -208,6 +215,14 @@ ul li:hover {
     font-size: 2em;
     margin-right: 20px;
     padding: 5px;
+}
+.product-info {
+    display: flex;
+    margin: 0px 30px;
+    justify-content: space-evenly;
+    border-bottom: 2px solid #FFD300;
+    letter-spacing: 1px;
+    font-size: 18px;
 }
 .advert{
     background-color: #708090;
@@ -230,8 +245,111 @@ ul li:hover {
 .similar-offers{
     background-color: white;
     margin: 0px;
-    padding-top: 20px;
+    padding-left: 30px;
     font-weight: 400;
+}
+.basket-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.basket-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5em;
+
+}
+.basket-item-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.basket-item {
+    
+width: 100%;
+}
+.basket-item-alienor {
+    font-weight: 400;
+    margin: 0px;
+    padding: 15px;
+}
+.basket-item-flex {
+    display: flex;
+    align-items: center;
+}
+
+.basket-item-image {
+    margin: 0px;
+    height: 120px;
+    width: 120px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 15px;
+    margin-top: 0px;
+}
+.basket-item-amount {
+    margin-left: auto;
+    margin-right: 10px;
+}
+.basket-item-price {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0px 10px;
+}
+.basket-item-name-status p{
+    margin: 10px 0px;
+}
+.basket-item-name {
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0px;
+    margin-right: 150px;
+}
+.basket-buy {
+    background-color: white;
+    margin-bottom: 20px;
+    height: 197px;
+}
+.basket-buy-amount {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0px 10px;
+    margin-top: 15px;
+}
+.basket-buy-amount p {
+    margin: 0px;
+}
+.basket-buy-amount h2 {
+    justify-self: end;
+    margin: 0px;
+}
+.basket-buy-amount span {
+    justify-self: end;
+}
+.basket-buy-button {
+    display: grid;
+    justify-items: center;
+    margin-top: 20px;
+}
+.basket-buy-button button {
+    width: 90%;
+}
+.basket-buy-discount{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+.basket-buy-discount a {
+    color: 	#1E90FF;
+}
+.basket-buy-discount a:hover {
+    cursor: pointer;
 }
 
 

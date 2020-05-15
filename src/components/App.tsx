@@ -8,6 +8,7 @@ import { Shop } from './Shop';
 import { Home } from './Home';
 import { Footer } from './Footer';
 import { Product } from './Product';
+import { BasketPage } from './BasketPage';
 
 export const App: React.FC = () => {
 	return (
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
 				<Route path='/' exact component={() => <Home />}/>
                 <Route path='/shop' exact component={() => <Shop />}/>
 				<Route path='/produkt' exact component={() => <Product />}/>
+				<Route path='/koszyk' exact component={() => <BasketPage />}/>
 			</Switch>
 		</div>
 		<Footer />
