@@ -10,6 +10,7 @@ import FaceIcon from '@material-ui/icons/Face';
 import HomeIcon from '@material-ui/icons/Home';
 import PetsIcon from '@material-ui/icons/Pets';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
+import { NavLink } from 'react-router-dom';
 
 export const Home: React.FC = () => {
 	return (
@@ -25,23 +26,24 @@ export const Home: React.FC = () => {
 					</Button>
 				</article>
 				<div className="categories"> 
+				
 					<div className="category">
-						<Avatar className="avatar"><DriveEtaIcon /></Avatar> &nbsp;&nbsp;&nbsp; Motoryzacja
+						<NavLink className="category-menu-item" to = '/motoryzacja'><Avatar className="avatar"><DriveEtaIcon /></Avatar> &nbsp;&nbsp;&nbsp; Motoryzacja</NavLink>
 					</div>
 					<div className="category">
-						<Avatar className="avatar"><TvIcon /></Avatar> &nbsp;&nbsp;&nbsp; Elektronika
+						<NavLink className="category-menu-item" to = '/elektronika'><Avatar className="avatar"><TvIcon /></Avatar> &nbsp;&nbsp;&nbsp; Elektronika</NavLink>
 					</div>
 					<div className="category">
-						<Avatar className="avatar"><FaceIcon /></Avatar> &nbsp;&nbsp;&nbsp; Moda
+					<NavLink className="category-menu-item" to = '/moda'><Avatar className="avatar"><FaceIcon /></Avatar> &nbsp;&nbsp;&nbsp; Moda</NavLink>
 					</div>
 					<div className="category">
-						<Avatar className="avatar"><HomeIcon /></Avatar> &nbsp;&nbsp;&nbsp; Dom
+						<NavLink className="category-menu-item" to = '/dom'><Avatar className="avatar"><HomeIcon /></Avatar> &nbsp;&nbsp;&nbsp; Dom</NavLink>
 					</div>
 					<div className="category">
-						<Avatar className="avatar"><PetsIcon /></Avatar> &nbsp;&nbsp;&nbsp; Zwierzęta
+						<NavLink className="category-menu-item" to = '/zwierzeta'><Avatar className="avatar"><PetsIcon /></Avatar> &nbsp;&nbsp;&nbsp; Zwierzęta</NavLink>
 					</div>
 					<div className="category">
-						<Avatar className="avatar"><SportsBasketballIcon /></Avatar> &nbsp;&nbsp;&nbsp; Sport
+						<NavLink className="category-menu-item" to = '/sport'><Avatar className="avatar"><SportsBasketballIcon /></Avatar> &nbsp;&nbsp;&nbsp; Sport</NavLink>
 					</div>
 				</div>
 			</div>

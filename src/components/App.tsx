@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar } from './NavBar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../assets/style.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
@@ -9,6 +9,7 @@ import { Home } from './Home';
 import { Footer } from './Footer';
 import { Product } from './Product';
 import { BasketPage } from './BasketPage';
+import { Category } from './Category';
 
 export const App: React.FC = () => {
 	return (
@@ -21,6 +22,12 @@ export const App: React.FC = () => {
                 <Route path='/shop' exact component={() => <Shop />}/>
 				<Route path='/produkt' exact component={() => <Product />}/>
 				<Route path='/koszyk' exact component={() => <BasketPage />}/>
+				<Route path='/motoryzacja' exact component={() => <Category category={"Motoryzacja"}/>}/>
+				<Route path='/elektronika' exact component={() => <Category category={"Elektronika"}/>}/>
+				<Route path='/moda' exact component={() => <Category category={"Moda"}/>}/>
+				<Route path='/dom' exact component={() => <Category category={"Dom"}/>}/>
+				<Route path='/zwierzeta' exact component={() => <Category category={"Zwierzeta"}/>}/>
+				<Route path='/sport' exact component={() => <Category category={"Sport"}/>}/>
 			</Switch>
 		</div>
 		<Footer />
