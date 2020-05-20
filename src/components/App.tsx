@@ -14,7 +14,7 @@ import { Category } from './Category';
 export const App: React.FC = () => {
 	return (
 	<Provider store={store}>
-		<Router basename="react-shop">
+		<Router>
 		<NavBar />
 		<div className="container">
 			<Switch>

@@ -6,8 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 
-import image from '../../assets/bmw.jpg'
-
 const CustomCheckbox = withStyles({
     root: {
       '&$checked': {
@@ -27,7 +25,7 @@ export const BasketItem: React.FC = () => {
       <section className="basket-item">
             <h4 className="basket-item-alienor">Sprzedający: Andrzej Nowak</h4>
             <div className="basket-item-flex">
-                <figure className="basket-item-image" style={{backgroundImage:`url(${image})`}}>
+                <figure className="basket-item-image" style={{backgroundImage:`url(${'https://raw.githubusercontent.com/szymon-kuc/react-shop/master/docs/81b0d10df8447311b55daeb1225bbd55.jpg'})`}}>
                 </figure>
                 <div className="basket-item-name-status">
                 <h2 className="basket-item-name">BMW i8</h2>
