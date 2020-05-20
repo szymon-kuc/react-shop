@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddIcon from '@material-ui/icons/Add';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
-import { Basket } from './Basket';
 import Button from '@material-ui/core/Button'
 import { NavLink } from 'react-router-dom';
 
 export const NavBar: React.FC = () => {
-  const [basket, setBasket] = useState(false);
-  const basketList = useSelector((state: any) => state.basket);
+   const basketList = useSelector((state: any) => state.basket);
 
 	return (
       <header className="navbar">
@@ -28,11 +26,13 @@ export const NavBar: React.FC = () => {
             <AccountCircleIcon /> &nbsp; Twoje konto
           </div>
           <div className="nav-item">
-          <IconButton edge="end" color="inherit" className="basket" onClick={() => basket === true ? setBasket(false) : setBasket(true)}>
-            <Badge badgeContent={basketList.length} color="secondary"><ShoppingBasketIcon /></Badge></IconButton>
+          <NavLink to="/koszyk">
+            <IconButton edge="end" color="inherit" className="basket">
+            <Badge badgeContent={basketList.length} color="secondary"><ShoppingBasketIcon /></Badge>
+            </IconButton>
+          </NavLink>
           </div> 
         </div>
-        {basket === true && <Basket />}
       </header>
        
 	);

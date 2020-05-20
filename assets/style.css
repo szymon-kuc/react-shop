@@ -254,6 +254,9 @@ a {
     padding-left: 30px;
     font-weight: 400;
 }
+.basket {
+    color: #FFD300 !important;
+}
 .basket-container {
     width: 80%;
     margin: 0 auto;
