@@ -25,7 +25,7 @@ export const BasketItem: React.FC = () => {
       <section className="basket-item">
             <h4 className="basket-item-alienor">Sprzedający: Andrzej Nowak</h4>
             <div className="basket-item-flex">
-                <figure className="basket-item-image" style={{backgroundImage:`url(${'https://raw.githubusercontent.com/szymon-kuc/react-shop/master/docs/81b0d10df8447311b55daeb1225bbd55.jpg'})`}}>
+                <figure className="basket-item-image" style={{backgroundImage:`url(${'https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg'})`}}>
                 </figure>
                 <div className="basket-item-name-status">
                 <h2 className="basket-item-name">BMW i8</h2>

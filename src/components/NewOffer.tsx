@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const NewOffer: React.FC = () => {
     const data: any = {
         id: 1,
-        img: "https://raw.githubusercontent.com/szymon-kuc/react-shop/master/docs/81b0d10df8447311b55daeb1225bbd55.jpg",
+        img: "https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg",
         name: "Bmw i8",
         price: 250000,
     }

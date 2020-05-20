@@ -6,7 +6,7 @@ export const CategoryItem: React.FC = () => {
 ;
 	return (
         <section className="category-item">
-             <figure className="category-item-image" style={{backgroundImage:`url(${'https://raw.githubusercontent.com/szymon-kuc/react-shop/master/docs/81b0d10df8447311b55daeb1225bbd55.jpg'})`}}></figure>
+             <figure className="category-item-image" style={{backgroundImage:`url(${'https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg'})`}}></figure>
              <div className="category-item-details">
                   <NavLink to="/produkt"><h2 className="category-item-name">BMW i8</h2></NavLink>
                 <ul className="category-info">

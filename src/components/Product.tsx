@@ -5,13 +5,12 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { NewOffer } from './NewOffer';
 import { Offer } from '../interfaces'
-import { dark } from '@material-ui/core/styles/createPalette';
 
 export const Product: React.FC = () => {
     const data: Offer = {
         id: 1,
         date: "2020-05-04",
-        img: "https://raw.githubusercontent.com/szymon-kuc/react-shop/master/docs/81b0d10df8447311b55daeb1225bbd55.jpg",
+        img: "https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg",
         name: "Bmw i8",
         price: 250000,
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, ipsum dolor, incidunt voluptatem dolores repellendus alias error blanditiis esse at, optio est. Aut quas quaerat ad odio saepe in sapiente!Aliquam vel est provident alias, quas odio! Deleniti aspernatur laudantium nulla, iusto laboriosam ea blanditiis atque temporibus, culpa, modi doloremque expedita. Itaque ducimus porro quis? Laboriosam culpa reprehenderit enim itaque. Atque eius fugiat debitis veniam beatae molestias!",
