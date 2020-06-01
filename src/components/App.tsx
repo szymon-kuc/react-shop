@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { NavBar } from './NavBar';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import '../../assets/style.css';
@@ -11,7 +12,9 @@ import { Product } from './Product';
 import { BasketPage } from './BasketPage';
 import { Category } from './Category';
 
+
 export const App: React.FC = () => {
+
 	return (
 	<Provider store={store}>
 		<Router>

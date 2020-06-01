@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
+import { I_Product } from '../interfaces';
 
 const CustomCheckbox = withStyles({
     root: {
@@ -14,22 +15,25 @@ const CustomCheckbox = withStyles({
     },
     checked: {},
   })((props) => <Checkbox color="default" {...props} />);
+  
+  interface I_BasketItem_Props {
+    product: I_Product
+  }
 
-export const BasketItem: React.FC = () => {
-  const [price, setPrice] = useState(250000);
-  const price1 = 250000;
+export const BasketItem: React.FC<I_BasketItem_Props> = ({product}) => {
+  const [price, setPrice] = useState(product.price);
 	return (
     <div className="basket-item-container">
       <div><CustomCheckbox/></div>
       
       <section className="basket-item">
-            <h4 className="basket-item-alienor">Sprzedający: Andrzej Nowak</h4>
+          <h4 className="basket-item-alienor">Sprzedający: {product.producer}</h4>
             <div className="basket-item-flex">
-                <figure className="basket-item-image" style={{backgroundImage:`url(${'https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg'})`}}>
+                <figure className="basket-item-image" style={{backgroundImage:`url(http://34.89.250.147:3000/${product.img})`}}>
                 </figure>
                 <div className="basket-item-name-status">
-                <h2 className="basket-item-name">BMW i8</h2>
-                <p>● stan: używany</p>
+                <h2 className="basket-item-name">{product.name}</h2>
+                <p>● stan: {product.status}</p>
                 </div>
                 
                 <div className="basket-item-amount">
@@ -37,7 +41,7 @@ export const BasketItem: React.FC = () => {
                     <NativeSelect
                         name="age"
                         inputProps={{ 'aria-label': 'age' }}
-                        onChange={(e: any) => setPrice(price1*e.target.value)}
+                        onChange={(e: any) => setPrice(product.price*e.target.value)}
                         >
                         <option value={1}>1</option>
                         <option value={2}>2</option>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { NewOffer } from './NewOffer'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -11,8 +11,17 @@ import HomeIcon from '@material-ui/icons/Home';
 import PetsIcon from '@material-ui/icons/Pets';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 import { NavLink } from 'react-router-dom';
+import { fetchItems } from '../actions/fetchItems';
+import { useDispatch, useSelector } from 'react-redux';
+import { I_Product } from '../interfaces'
 
 export const Home: React.FC = () => {
+	const dispatch = useDispatch();
+	const fetchItemAction = () => dispatch(fetchItems());
+	useEffect(() => {
+		fetchItemAction();
+	},[]);
+	const data = useSelector((state: Array<I_Product>) => state.products);
 	return (
 		<>
 		<section className="navigation">
@@ -51,12 +60,7 @@ export const Home: React.FC = () => {
 		<section className="new-offers">
 			<h2>Ostatnio dodane ogłoszenia</h2>
 			<section className="new-offers-grid">
-				<NewOffer />
-				<NewOffer />
-				<NewOffer />
-				<NewOffer />
-				<NewOffer />
-				<NewOffer />
+				{data.map((product: I_Product)=> <NewOffer key={product._id} product={product}/> )}
 			</section>
 		</section>
 		</>

@@ -1,22 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { NewOffer } from './NewOffer';
-import { Offer } from '../interfaces'
+import { I_Product } from '../interfaces'
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchItems } from '../actions/fetchItems';
 
 export const Product: React.FC = () => {
-    const data: Offer = {
-        id: 1,
-        date: "2020-05-04",
-        img: "https://katalogmarzen.pl/img/products/1/2019_04/bmw-i8-2.jpg",
-        name: "Bmw i8",
-        price: 250000,
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, ipsum dolor, incidunt voluptatem dolores repellendus alias error blanditiis esse at, optio est. Aut quas quaerat ad odio saepe in sapiente!Aliquam vel est provident alias, quas odio! Deleniti aspernatur laudantium nulla, iusto laboriosam ea blanditiis atque temporibus, culpa, modi doloremque expedita. Itaque ducimus porro quis? Laboriosam culpa reprehenderit enim itaque. Atque eius fugiat debitis veniam beatae molestias!",
-        alienor: "Andrzej Nowak",
-        status: "Używany"
-    }
+	const dispatch = useDispatch();
+	const fetchItemAction = () => dispatch(fetchItems());
+	useEffect(() => {
+		fetchItemAction();
+	},[]);
+	const data = useSelector((state: Array<I_Product>) => state.products);
+    const product = data[0];
+    console.log(data)
 	return (
         <>
 
@@ -27,7 +27,7 @@ export const Product: React.FC = () => {
                         Poprzednie
                     </Button>
                 </div>
-                <div>Data wystawienia: {data.date}</div>
+                <div>Data wystawienia: {product.date}</div>
                 <div>         
                     <Button variant="contained" className="buttonP" endIcon={<ArrowForwardIosIcon />}>
                         Następne
@@ -36,11 +36,11 @@ export const Product: React.FC = () => {
             </section>
             <article className="product-header">
                 <figure className="product-img">
-                    <img src={data.img} alt=""/>
+                    <img src={"http://34.89.250.147:3000/" + product.img} style={{maxHeight: "600px"}} alt=""/>
                 </figure>
-                <h1 className="product-title">{data.name}</h1>
+                <h1 className="product-title">{product.name}</h1>
                 <div className="product-price-buy">
-                    <div className="product-price">{data.price} zł</div>
+                    <div className="product-price">{product.price} zł</div>
                     <div className="product-buy">
                         <Button variant="contained" className="button" startIcon={<ShoppingCartIcon />}>
                             Kup
@@ -49,22 +49,20 @@ export const Product: React.FC = () => {
                 </div>
             </article>
             <article className="product-info">
-                <p>Sprzedawca: {data.alienor}</p>
-                <p>Stan: {data.status}</p>
+                <p>Sprzedawca: {product.producer}</p>
+                <p>Stan: {product.status}</p>
             </article>
             <article className="advert">
                 Miejsce na reklame
             </article>
             <article className="description">
                 <p>
-                    {data.description}
+                    {product.description}
                 </p>
             </article>
             <h1 className="similar-offers">Podobne oferty:</h1>
             <section className="new-offers-grid">
-				<NewOffer />
-				<NewOffer />
-				<NewOffer />
+                {data.map((product: I_Product)=> <NewOffer key={product._id} product={product}/> )}
 			</section>
         </section>
         </>

@@ -18,3 +18,15 @@ export interface Offer {
     alienor: string,
     status: string
 }
+
+export interface I_Product {
+    _id: string,
+    name: string,
+    price: number,
+    amount: number,
+    producer: string,
+    description: string,
+    status: string,
+    date: string,
+    img: string,
+}

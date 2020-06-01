@@ -1,6 +1,7 @@
-import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, BUY_ITEM, DELETE_ITEM_BASKET } from '../actions/types';
+import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, BUY_ITEM, DELETE_ITEM_BASKET, FETCH_ITEMS } from '../actions/types';
 let data = localStorage.getItem('data');
 let basket = localStorage.getItem('basket');
+import { I_Product } from '../interfaces'
 
 if(data === null){
     localStorage.setItem('data', JSON.stringify([]));
@@ -12,13 +13,24 @@ if(basket === null){
 } else{
     basket = JSON.parse(basket);
 }
+const product: I_Product = {
+    _id: "",
+    name: "",
+    price: 0,
+    amount: 0,
+    producer: "",
+    description: "",
+    status: "",
+    date: "",
+    img: ""
+}
 
-export default function reducer(state: any ={items: data, basket: basket} , { type, payload}: any){
+export default function reducer(state = {products: [] } , { type, payload}: any){
     switch(type){
-        case ADD_ITEM:
+        case FETCH_ITEMS:
             return {
                 ...state,
-                items: payload
+                products: payload
             };
         case DELETE_ITEM:
             return {
