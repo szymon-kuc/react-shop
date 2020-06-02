@@ -9,7 +9,6 @@ export const fetchItems = () => (
         if(data.error) {
             throw(data.error);
         }
-        console.log(data.products);
         dispatch ({
             type: FETCH_ITEMS,
             payload: data.products

@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Checkbox from '@material-ui/core/Checkbox';
 import { I_Product } from '../interfaces';
 
+
 const CustomCheckbox = withStyles({
     root: {
       '&$checked': {
@@ -17,11 +18,19 @@ const CustomCheckbox = withStyles({
   })((props) => <Checkbox color="default" {...props} />);
   
   interface I_BasketItem_Props {
-    product: I_Product
+    product: I_Product,
+    deleteI: any,
+    totalPrice: any
   }
 
-export const BasketItem: React.FC<I_BasketItem_Props> = ({product}) => {
+export const BasketItem: React.FC<I_BasketItem_Props> = ({product, deleteI, totalPrice}) => {
+
+
   const [price, setPrice] = useState(product.price);
+  const priceChange = (e: any) => {
+    setPrice(product.price*e.target.value);
+    totalPrice(product.price*(e.target.value));
+  }
 	return (
     <div className="basket-item-container">
       <div><CustomCheckbox/></div>
@@ -41,7 +50,7 @@ export const BasketItem: React.FC<I_BasketItem_Props> = ({product}) => {
                     <NativeSelect
                         name="age"
                         inputProps={{ 'aria-label': 'age' }}
-                        onChange={(e: any) => setPrice(product.price*e.target.value)}
+                        onChange={(e: any) => priceChange(e)}
                         >
                         <option value={1}>1</option>
                         <option value={2}>2</option>
@@ -58,7 +67,7 @@ export const BasketItem: React.FC<I_BasketItem_Props> = ({product}) => {
                 </div>
                 <div className="basket-item-price">{price}zł</div>
                 <div className="basket-item-delete">
-                    <IconButton color="inherit"> <DeleteIcon /></IconButton>
+                    <IconButton color="inherit" onClick={() => deleteI(product._id)}> <DeleteIcon /></IconButton>
                 </div>
             </div>
         </section>

@@ -7,7 +7,7 @@ interface I_NewOffer_Props {
 }
 export const NewOffer: React.FC<I_NewOffer_Props> = ({product}) => {
 	return (
-        <NavLink to="/produkt">
+        <NavLink to={'/produkt/'+product._id}>
             <div className="new-offer">
                 <figure className="new-offer-img" style={{backgroundImage:`url(http://34.89.250.147:3000/${product.img})`}}>
                 </figure>

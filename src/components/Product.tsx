@@ -7,19 +7,53 @@ import { NewOffer } from './NewOffer';
 import { I_Product } from '../interfaces'
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchItems } from '../actions/fetchItems';
+import { buyItem } from '../actions/buyItem';
 
 export const Product: React.FC = () => {
+    let id = window.location.href.lastIndexOf("/");
+    const item_id = window.location.href.substr(id + 1);
+
+    let product: I_Product = {
+        _id: "",
+        name: "",
+        price: 0,
+        amount: 0,
+        producer: "",
+        description: "",
+        status: "",
+        date: "",
+        img: "",
+    }
+
 	const dispatch = useDispatch();
 	const fetchItemAction = () => dispatch(fetchItems());
 	useEffect(() => {
 		fetchItemAction();
 	},[]);
-	const data = useSelector((state: Array<I_Product>) => state.products);
-    const product = data[0];
-    console.log(data)
+    const data = useSelector((state: Array<I_Product>) => state.products);
+    if(data[0] != null){
+       product = data.filter((product: I_Product) => product._id == item_id )[0];
+    }
+    const buyItemAction = (id: string) => dispatch(buyItem(id));
+
+    const HandleBuyItem = () => {
+        const data = localStorage.getItem('basket');
+        const newData: Array<string> = data === null ? "" : JSON.parse(data);
+        let isInBasket = false;
+        newData.map((id: string) => {
+        if(id === item_id){
+            isInBasket = true;
+        }
+        return id;
+        });
+        if(isInBasket == false){
+            buyItemAction([...newData, item_id]);
+        }
+        const newJSON = isInBasket === false ? [...newData, item_id] : newData;
+        localStorage.setItem('basket', JSON.stringify(newJSON));
+    }
 	return (
         <>
-
         <section className="product">
             <section className="product-buttons">
                 <div>         
@@ -42,7 +76,7 @@ export const Product: React.FC = () => {
                 <div className="product-price-buy">
                     <div className="product-price">{product.price} zł</div>
                     <div className="product-buy">
-                        <Button variant="contained" className="button" startIcon={<ShoppingCartIcon />}>
+                        <Button variant="contained" className="button" onClick={() => HandleBuyItem()} startIcon={<ShoppingCartIcon />}>
                             Kup
                         </Button>
                     </div>

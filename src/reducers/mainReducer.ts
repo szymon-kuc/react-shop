@@ -1,7 +1,7 @@
-import { ADD_ITEM, DELETE_ITEM, EDIT_ITEM, BUY_ITEM, DELETE_ITEM_BASKET, FETCH_ITEMS } from '../actions/types';
+import { BUY_ITEM, DELETE_ITEM_BASKET, FETCH_ITEMS } from '../actions/types';
 let data = localStorage.getItem('data');
-let basket = localStorage.getItem('basket');
-import { I_Product } from '../interfaces'
+let basket: any = [];
+basket.push(localStorage.getItem('basket'));
 
 if(data === null){
     localStorage.setItem('data', JSON.stringify([]));
@@ -13,35 +13,14 @@ if(basket === null){
 } else{
     basket = JSON.parse(basket);
 }
-const product: I_Product = {
-    _id: "",
-    name: "",
-    price: 0,
-    amount: 0,
-    producer: "",
-    description: "",
-    status: "",
-    date: "",
-    img: ""
-}
 
-export default function reducer(state = {products: [] } , { type, payload}: any){
+export default function reducer(state = {products: [], basket: basket } , { type, payload}: any){
     switch(type){
         case FETCH_ITEMS:
             return {
                 ...state,
                 products: payload
             };
-        case DELETE_ITEM:
-            return {
-                ...state,
-                items: state.items.filter((item: any) => item.id !== payload)
-            };
-        case EDIT_ITEM:
-                return {
-                    ...state,
-                    items: state.items.map((item: any) => item.id === payload.id ? payload : item)
-                };
         case BUY_ITEM:
             return {
                 ...state,
@@ -50,7 +29,7 @@ export default function reducer(state = {products: [] } , { type, payload}: any)
         case DELETE_ITEM_BASKET:
                 return {
                     ...state,
-                    basket: state.basket.filter((item: any) => item.id !== payload)
+                    basket: state.basket.filter((id: string) => id !== payload)
                 };
         default:
             return state;
