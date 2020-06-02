@@ -442,6 +442,10 @@ img {
             background-repeat: no-repeat;
             margin: 10px;
             margin-right: 15px;
+            @include desktop() {
+                height: 120px;
+                width: 120px;
+             }
         }
         .category-item-name {
             color: black;
@@ -454,6 +458,9 @@ img {
                 cursor: pointer;
                 color: $secondary;
             }
+            @include desktop() {
+                font-size: 22px;
+             }
         }
         .category-info {
             display: flex;
@@ -466,10 +473,16 @@ img {
             span {
                 font-weight: 600;
             }
+            @include desktop() {
+               display: none;
+            }
         }
         .category-price {
             font-weight: 600;
             font-size: 24px;
+            @include desktop() {
+                font-size: 18px;
+             }
         }
     }
     @include bigScreen() {
